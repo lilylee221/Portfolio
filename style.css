@@ -1,0 +1,30 @@
+.root {
+  /* color */
+  /* --beige-color: #ffebcd;
+  --orange-color: #f0a04b;
+  --deep-green-color: #005b49;
+  --light-blue-color: #c3fcf1; */
+  /* size */
+  /* font-size */
+}
+
+/* body {
+  margin: 0;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffebcd;
+}
+.navbar__logo {
+  display: flex;
+} */
+.navbar__logo .logo {
+  width: 3em;
+  height: 3em;
+}
+/* .navbar__logo span {
+  font-size: 2em;
+  color: var(--beige-color);
+} */
