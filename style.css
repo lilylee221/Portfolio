@@ -1,0 +1,62 @@
+:root {
+  /* Color */
+  --color-white: white;
+  --color-black: #363636;
+  --color-orange: #f0a04b;
+  --color-deep-green: #005b49;
+  --color-green: #4b8077;
+  --color-light-blue: #c3fcf1;
+  --color-beige: #ffebcd;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+  /* Size */
+}
+
+/* universial tag */
+* {
+  box-sizing: border-box;
+}
+body {
+}
+
+/* Typography */
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  font-family: 'Abril Fatface', cursive;
+  color: var(--color-deep-green);
+  margin: 16px 0;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  font-family: 'M PLUS 2', sans-serif;
+  color: var(--color-green);
+  margin: 8px 0;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  font-family: 'M PLUS 2', sans-serif;
+  color: var(--color-green);
+  margin: 8px 0;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  font-family: 'M PLUS 2', sans-serif;
+  color: var(--color-black);
+  margin: 4px 0;
+}
