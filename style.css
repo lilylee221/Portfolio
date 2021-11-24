@@ -8,7 +8,7 @@
   --color-light-green: #658681;
   --color-light-blue: #3caaed;
   --color-beige: #ffebcd;
-
+  --color-light-beige: #fafdf3;
   /* Font size */
   --font-large: 48px;
   --font-medium: 28px;
@@ -27,7 +27,7 @@
   --border-size: 3px;
 
   /* Animation */
-  --animaion-duration: all 300ms ease;
+  --animaion-duration: 300ms;
 }
 
 /* universial tag */
@@ -175,7 +175,9 @@ p {
 }
 .section__container {
   max-width: 1200px;
+  margin: auto;
 }
+
 /* about */
 .about__stacks {
   display: flex;
@@ -286,4 +288,96 @@ p {
   padding: 20px;
 
   height: 50%;
+}
+
+/* work */
+.projects__categories {
+  margin: var(--medium-space) 0 var(--large-space) 0;
+}
+.category__btn {
+  font-size: var(--font-small);
+  padding: var(--basic-space) var(--medium-space);
+  margin: 0 var(--basic-space);
+  box-shadow: 1px 3px 6px 1px #363636;
+  border-radius: var(--border-size);
+  background-color: var(--color-beige);
+}
+
+.category__btn.active,
+.category__btn:hover {
+  color: var(--color-beige);
+  background-color: var(--color-green);
+}
+
+.category__btn.active .category__count,
+.category__btn:hover .category__count {
+  opacity: 1;
+}
+.category__count {
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  margin-left: 3px;
+  color: var(--color-beige);
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0;
+  transition: all var(--animaion-duration) ease;
+}
+
+.projects__box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  margin: var(--basic-space);
+  position: relative;
+  background-color: var(--color-light-beige);
+  transition: all var(--animaion-duration) ease-in;
+}
+.project:hover,
+.project:hover .project__description {
+  opacity: 0.8;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  transform: translateY(0px);
+}
+.project__img {
+  max-width: 100%;
+  max-height: 100%;
+  /* max-width/max-height -> to make image fit in the box */
+}
+.project__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-beige);
+  background-color: var(--color-black);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--animaion-duration) ease-in;
+}
+.project__description h3 {
+  color: var(--color-beige);
+}
+.project__description h3:after {
+  content: '';
+  margin: auto;
+  margin-top: var(--basic-space);
+  width: var(--medium-space);
+  height: 2px;
+  background-color: var(--color-beige);
+  display: block;
 }
