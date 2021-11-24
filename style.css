@@ -25,6 +25,7 @@
   --large-space: 80px;
   --thin-border-size: 1px;
   --border-size: 3px;
+  --bubble-border-size: 20px;
 
   /* Animation */
   --animaion-duration: 300ms;
@@ -380,4 +381,42 @@ p {
   height: 2px;
   background-color: var(--color-beige);
   display: block;
+}
+
+/* Testimonial */
+#testimonials {
+  background-color: var(--color-beige);
+}
+.testimonials {
+  margin: var(--medium-space);
+}
+.testimonial {
+  display: flex;
+  align-items: center;
+  margin: var(--medium-space) 0;
+}
+.testimaonial__avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* 홀수 odd 짝수 even 따로 style */
+.testimaonial__avatar:nth-child(odd) {
+  margin-right: var(--medium-space);
+}
+
+.testimaonial__avatar:nth-child(even) {
+  margin-left: var(--medium-space);
+}
+.testimonial__speech-bubble {
+  padding: 18px;
+  background-color: var(--color-light-beige);
+  border-radius: var(--bubble-border-size);
+}
+.testimonial__speech-bubble p {
+  color: var(--color-black);
+}
+.testimonial__speech-bubble a {
+  color: var(--color-orange);
 }
