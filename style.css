@@ -420,3 +420,31 @@ p {
 .testimonial__speech-bubble a {
   color: var(--color-orange);
 }
+
+/* contact */
+#contact {
+  background-color: var(--color-orange);
+}
+.contact__email {
+  color: var(--color-beige);
+}
+.contact__links {
+  font-size: var(--font-large);
+  transition: all var(--animaion-duration) ease-in;
+}
+
+.contact__links i {
+  transition: all var(--animaion-duration) ease-in;
+}
+.contact__links i:hover {
+  transform: scale(1.1);
+}
+.fa-linkedin {
+  color: #0b66c2;
+}
+.fa-github {
+  color: var(--color-black);
+}
+.contact__copyright {
+  font-size: var(--font-micro);
+}
