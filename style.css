@@ -432,6 +432,7 @@ p {
 /* contact */
 #contact {
   background-color: var(--color-orange);
+  /* position: relative; */
 }
 .contact__email {
   color: var(--color-beige);
@@ -463,6 +464,23 @@ p {
   font-size: var(--font-regular);
   color: var(--color-deep-green);
   display: none;
+}
+.arrow-up {
+  font-size: var(--font-medium);
+  color: var(--color-deep-green);
+  position: fixed;
+  right: 3%;
+  bottom: 10%;
+  border: var(--border-size) solid var(--color-deep-green);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--animaion-duration) ease-in;
+  pointer-events: none;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 @media screen and (max-width: 768px) {
   .navbar__toggle {

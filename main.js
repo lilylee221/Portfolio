@@ -50,3 +50,17 @@ console.log(homeHeight);
 document.addEventListener('scroll', () => {
   homeSection.style.opacity = 1 - window.scrollY / homeHeight;
 });
+
+//show 'arrow up' btn when scrolling down
+
+document.addEventListener('scroll', () => {
+  window.scrollY > homeHeight / 2
+    ? arrowUp.classList.add('visible')
+    : arrowUp.classList.remove('visible');
+});
+
+//scroll to Home when arrow-up btn clicked
+const arrowUp = document.querySelector('.arrow-up');
+arrowUp.addEventListener('click', () => {
+  scrollIntoView('#home');
+});
