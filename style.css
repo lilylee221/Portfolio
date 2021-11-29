@@ -138,6 +138,9 @@ p {
 
 #home {
   background-color: var(--color-beige);
+}
+
+.home__container {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -158,6 +161,7 @@ p {
   box-shadow: 20px -5px 10px var(--color-orange);
   margin-right: var(--medium-space);
 }
+
 .home__contact {
   font-size: var(--font-regular);
   font-weight: var(--weight-semi-bold);
