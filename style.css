@@ -338,6 +338,13 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animaion-duration) ease-in-out;
+}
+
+.projects__box.anim-out {
+  opacity: 0;
+  transform: scale(0.98) translateY(40px);
 }
 
 .project {
@@ -352,12 +359,16 @@ p {
   background-color: var(--color-light-beige);
   transition: all var(--animaion-duration) ease-in;
 }
+.project.invisible {
+  display: none;
+}
 .project:hover,
 .project:hover .project__description {
   opacity: 0.8;
   box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
   transform: translateY(0px);
 }
+
 .project__img {
   max-width: 100%;
   max-height: 100%;

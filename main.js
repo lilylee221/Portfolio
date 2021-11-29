@@ -64,3 +64,34 @@ const arrowUp = document.querySelector('.arrow-up');
 arrowUp.addEventListener('click', () => {
   scrollIntoView('#home');
 });
+
+//project filtering
+const projectBtnContainer = document.querySelector('.projects__categories');
+const projectContainer = document.querySelector('.projects__box');
+const projects = document.querySelectorAll('.project');
+
+projectBtnContainer.addEventListener('click', (event) => {
+  const target = event.target;
+  const filter = target.dataset.filter || target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+
+  //filtering animation
+  projectContainer.classList.add('anim-out');
+  //setTimeout to remove anim-out , for loop inside of setTimeout
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if (filter === '*' || project.dataset.type === filter) {
+        project.classList.remove('invisible');
+      } else {
+        project.classList.add('invisible');
+      }
+    });
+    projectContainer.classList.remove('anim-out');
+  }, 300);
+});
+
+//all default
+//make project filtering function
+// how to diaplay filtered projects
