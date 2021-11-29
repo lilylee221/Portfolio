@@ -76,6 +76,12 @@ projectBtnContainer.addEventListener('click', (event) => {
   if (filter == null) {
     return;
   }
+  //categories active btn toggle
+  const active = document.querySelector('.category__btn.active');
+  active.classList.remove('active');
+  const btnTarget =
+    event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+  btnTarget.classList.add('active');
 
   //filtering animation
   projectContainer.classList.add('anim-out');
@@ -91,7 +97,3 @@ projectBtnContainer.addEventListener('click', (event) => {
     projectContainer.classList.remove('anim-out');
   }, 300);
 });
-
-//all default
-//make project filtering function
-// how to diaplay filtered projects
