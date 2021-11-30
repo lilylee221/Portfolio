@@ -11,6 +11,17 @@ document.addEventListener('scroll', () => {
   }
 });
 
+//open navbar when toggle btn is clicked in media queries
+const navbarToggleBtn = document.querySelector('.navbar__toggle');
+const blur = document.querySelector('.blur');
+navbarToggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('toggled');
+  //make background opacity 0.5
+  blur.classList.toggle('toggled');
+});
+
+// make navbar menu visible on the top
+
 // Scroll to the sction when tapping on the navbar menu
 
 const navbarMenu = document.querySelector('.navbar__menu');
@@ -32,6 +43,15 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove('toggled');
+  blur.classList.remove('toggled');
+
+  //navbar active menu toggle - *point: navbarMenuActive with ||(Logical OR operator)
+  const navbarMenuActive =
+    document.querySelector('.navbar__menu__item.active') ||
+    target.classList.includes('active');
+  navbarMenuActive.classList.remove('active');
+  target.classList.add('active');
   scrollIntoView(link);
 });
 
