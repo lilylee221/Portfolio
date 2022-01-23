@@ -1,2 +1,10 @@
 # Portfolio
- Lily's portfolio
+ Hello, World! It is Lily's portfolio web page.
+ 
+ ### Skills used
+  * HTML
+  * CSS
+  * JavsScript
+    * Intersection Observer API
+    * scrollIntoView
+    * Responsive navigation bar modal
