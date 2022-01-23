@@ -11,13 +11,25 @@ document.addEventListener('scroll', () => {
   }
 });
 
-//open navbar when toggle btn is clicked in media queries
-const navbarToggleBtn = document.querySelector('.navbar__toggle');
-const blur = document.querySelector('.blur');
-navbarToggleBtn.addEventListener('click', () => {
+function navbarToggle() {
   navbarMenu.classList.toggle('toggled');
-  //make background opacity 0.5
-  blur.classList.toggle('toggled');
+  blurOverlay.classList.toggle('toggled');
+}
+//open navbar when toggle btn is clicked in media queries
+const navbarHamburgerBtn = document.querySelector('.navbar__hamburger');
+const blurOverlay = document.querySelector('.blur--overlay');
+navbarHamburgerBtn.addEventListener('click', () => {
+  navbarToggle();
+});
+//deactivate navbar toggle btn & overlay when overlay is clicked
+blurOverlay.addEventListener('click', () => {
+  navbarToggle();
+});
+//deactivate navbar toggle btn & overlay when esc key is entered
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navbarMenu.classList.contains('toggled')) {
+    navbarToggle();
+  }
 });
 
 // make navbar menu visible on the top
@@ -33,8 +45,7 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
-  navbarMenu.classList.remove('toggled');
-  blur.classList.remove('toggled');
+  navbarToggle();
 
   //navbar active menu toggle - *point: navbarMenuActive with ||(Logical OR operator)
   const navbarMenuActive =
@@ -78,34 +89,6 @@ arrowUp.addEventListener('click', () => {
 const projectBtnContainer = document.querySelector('.projects__categories');
 const projectContainer = document.querySelector('.projects__box');
 const projects = document.querySelectorAll('.project');
-
-projectBtnContainer.addEventListener('click', (event) => {
-  const target = event.target;
-  const filter = target.dataset.filter || target.parentNode.dataset.filter;
-  if (filter == null) {
-    return;
-  }
-  //categories active btn toggle
-  const active = document.querySelector('.category__btn.active');
-  active.classList.remove('active');
-  const btnTarget =
-    event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
-  btnTarget.classList.add('active');
-
-  //filtering animation
-  projectContainer.classList.add('anim-out');
-  //setTimeout to remove anim-out , for loop inside of setTimeout
-  setTimeout(() => {
-    projects.forEach((project) => {
-      if (filter === '*' || project.dataset.type === filter) {
-        project.classList.remove('invisible');
-      } else {
-        project.classList.add('invisible');
-      }
-    });
-    projectContainer.classList.remove('anim-out');
-  }, 300);
-});
 
 // intersectionobserver to active navbar__menu when scrolling(wheel)
 // 1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다
@@ -173,7 +156,7 @@ sections.forEach((section) => observer.observe(section));
 // with the above index info, wheel = 0 -> home /
 // window.scrollY + window.innerHeight === document.body.clientHeight => the last item
 window.addEventListener('wheel', () => {
-  if (window.scrolly === 0) {
+  if (window.scrollY === 0) {
     selectedNavIndex = 0;
   } else if (
     window.scrollY + window.innerHeight ===
