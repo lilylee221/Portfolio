@@ -333,21 +333,22 @@ p {
 
 .project {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  width: 500px;
+  width: 600px;
   height: 300px;
-  margin: var(--basic-space);
+  margin: 3rem 0;
   position: relative;
+}
+
+.project__link {
   background-color: var(--color-light-beige);
   transition: all var(--animaion-duration) ease-in;
 }
-.project.invisible {
-  display: none;
-}
-.project:hover,
-.project:hover .project__detail {
+.project__link:hover,
+.project__link:hover .project__detail {
   opacity: 0.8;
   box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
   transform: translateY(0px);
@@ -392,7 +393,21 @@ p {
   color: var(--color-white);
   font-size: var(--font-small);
 }
+.project__code__btn {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  padding: var(--basic-space);
+  margin: calc((var(--basic-space)) * 2);
+  border: var(--border-size) solid var(--color-orange);
+  color: var(--color-deep-green);
+  border-radius: 4px;
+  transition: all 0.2s linear;
+}
 
+.project__code__btn:hover {
+  background-color: var(--color-orange);
+  color: var(--color-beige);
+}
 /* contact */
 #contact {
   background-color: var(--color-orange);
