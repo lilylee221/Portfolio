@@ -340,12 +340,13 @@ p {
   width: 600px;
   height: 300px;
   margin: 3rem 0;
-  position: relative;
 }
 
 .project__link {
   background-color: var(--color-light-beige);
   transition: all var(--animaion-duration) ease-in;
+
+  position: relative;
 }
 .project__link:hover,
 .project__link:hover .project__detail {
